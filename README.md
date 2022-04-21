@@ -6,7 +6,7 @@ A small package with calibration tools.
 
 
 
-There are three calibrators that you can use train in this package: Logistic, Isotonic and Beta calibrators. You can easily train them by running the following lines:
+There are three calibrators that you can train with this package: Logistic, Isotonic and Beta calibrators. You can easily train them by running the following lines:
 
 ```
 import calibration as cal
