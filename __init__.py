@@ -5,7 +5,6 @@ import pandas as pd
 import typing
 import warnings
 import feyn
-from typing import Dict, Optional
 from matplotlib.axes import Axes
 from sklearn.calibration import calibration_curve
 from sklearn.isotonic import IsotonicRegression
@@ -123,8 +122,8 @@ class LogisticCalibrator(Calibrator):
         self,
         min_score: float = 0,
         max_score: float = 1 + 1e-08,
-        ax: Optional[Axes] = None,
-        figsize: Optional[tuple] = None,
+        ax: typing.Optional[Axes] = None,
+        figsize: typing.Optional[tuple] = None,
     ) -> Axes:
 
         """
@@ -218,8 +217,8 @@ class IsotonicCalibrator:
         self,
         min_score: float = 0,
         max_score: float = 1 + 1e-08,
-        ax: Optional[Axes] = None,
-        figsize: Optional[tuple] = None,
+        ax: typing.Optional[Axes] = None,
+        figsize: typing.Optional[tuple] = None,
     ) -> Axes:
 
         """
@@ -315,8 +314,8 @@ class BetaCalibrator:
         self,
         min_score: float = 0,
         max_score: float = 1 + 1e-08,
-        ax: Optional[Axes] = None,
-        figsize: Optional[tuple] = None,
+        ax: typing.Optional[Axes] = None,
+        figsize: typing.Optional[tuple] = None,
     ) -> Axes:
 
         """
@@ -390,9 +389,9 @@ def reliability_diagram(
 def plot_reliability_diagram(
     frac_true: typing.Iterable,
     mean_pred_scores: typing.Iterable,
-    plot_ideal_calibration: Optional[bool] = False,
-    label: Optional[str] = None,
-    ax: Optional[Axes] = None,
+    plot_ideal_calibration: typing.Optional[bool] = False,
+    label: typing.Optional[str] = None,
+    ax: typing.Optional[Axes] = None,
     figsize: Optional[tuple] = None,
 ) -> Axes:
 
