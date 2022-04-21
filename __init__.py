@@ -1,16 +1,13 @@
+
+import feyn
 from abc import ABC, abstractmethod
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
 import typing
-import warnings
-import feyn
 from matplotlib.axes import Axes
 from sklearn.calibration import calibration_curve
 from sklearn.isotonic import IsotonicRegression
 from sklearn.linear_model import LogisticRegression
-
-
 from betacal import BetaCalibration
 
 
