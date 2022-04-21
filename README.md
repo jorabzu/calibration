@@ -11,9 +11,9 @@ There are three calibrators that you can train with this package: Logistic, Isot
 ```
 import calibration as cal
 
-logistic_calibrator = cal.LogisticCalibrator.train(y_pred_scores_uncalibrated,y_true, positive_class)
-isotonic_calibrator = cal.IsotonicCalibrator.train(y_pred_scores_uncalibrated,y_true, positive_class)
-beta_calibrator = cal.BetaCalibrator.train(y_pred_scores_uncalibrated,y_true, positive_class)
+logistic_calibrator = cal.LogisticCalibrator.train(y_pred_scores_uncalibrated, y_true, positive_class)
+isotonic_calibrator = cal.IsotonicCalibrator.train(y_pred_scores_uncalibrated, y_true, positive_class)
+beta_calibrator = cal.BetaCalibrator.train(y_pred_scores_uncalibrated, y_true, positive_class)
 
 ```
 
@@ -39,14 +39,14 @@ logistic_calibrated_scores = logistic_calibrator.calibrate(uncalibrated_scores)
 Once you have calibrated scores, you can plot a reliability diagram and compute some metrics:
 
 ```
-frac_true, mean_pred_scores = cal.reliability_diagram(y_true,logistic_calibrated_scores, positive_class: 1,n_bins: int = 10,bin_type: str = "uniform",
+frac_true, mean_pred_scores = cal.reliability_diagram(y_true, logistic_calibrated_scores, positive_class, n_bins, bin_type)
 cal.plot_reliability_diagram(frac_true, mean_pred_scores)
 
 
-log_loss = cal.log_loss(y_true,logistic_calibrated_scores,positive_class=1)
-brier_score = cal.brier_score_loss(y_true,logistic_calibrated_scores,positive_class=1)
-ece = cal.binary_ece(y_true,logistic_calibrated_scores,positive_class=1, n_bins = 10, bin_type = "uniform")
-mce = cal.binary_mce(y_true,logistic_calibrated_scores,positive_class=1, n_bins = 10, bin_type = "uniform")
+log_loss = cal.log_loss(y_true, logistic_calibrated_scores ,positive_class)
+brier_score = cal.brier_score_loss(y_true, logistic_calibrated_scores, positive_class)
+ece = cal.binary_ece(y_true, logistic_calibrated_scores, positive_class, n_bins, bin_type)
+mce = cal.binary_mce(y_true, logistic_calibrated_scores, positive_class, n_bins, bin_type)
 ```
 
 
