@@ -66,7 +66,7 @@ class LogisticCalibrator(Calibrator):
         sample_weight: typing.Optional[typing.Iterable] = None,
     ):
         """
-        Trains a logistic regression for calibration.
+        Trains a logistic calibrator.
 
         Arguments:
 
@@ -163,7 +163,7 @@ class IsotonicCalibrator:
     ):
 
         """
-        Trains a logistic regression for calibration.
+        Trains an isotonic calibrator.
 
         Arguments:
 
@@ -259,7 +259,7 @@ class BetaCalibrator:
     ):
 
         """
-        Trains a logistic regression for calibration.
+        Trains a beta calibrator.
 
         Arguments:
             y_pred_scores_uncalibrated -- uncalibrated scores predicted by a model.
@@ -389,7 +389,7 @@ def plot_reliability_diagram(
     plot_ideal_calibration: typing.Optional[bool] = False,
     label: typing.Optional[str] = None,
     ax: typing.Optional[Axes] = None,
-    figsize: Optional[tuple] = None,
+    figsize: typing.Optional[tuple] = None,
 ) -> Axes:
 
     """
